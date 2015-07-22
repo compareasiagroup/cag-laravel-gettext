@@ -1,6 +1,6 @@
 <?php
 
-namespace Xinax\LaravelGettext\Test;
+namespace CompareAsiaGroup\LaravelGettext\Test;
 
 use \Mockery as m;
 

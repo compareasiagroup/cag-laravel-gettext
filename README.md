@@ -1,17 +1,9 @@
 # Laravel Gettext
 
+
 *Laravel Gettext* is a package compatible with the great Laravel PHP Framework. It provides a simple way to add localization support to Laravel applications. It is designed to work with *GNU Gettext* and *PoEdit*.
 
-> Note: branch <b>1.x is for Laravel 4.x</b>, branch <b>2.x is for Laravel 5.x</b>. 
-> This documentation applies to laravel 5.1. For older versions of laravel check the following links:
-
-[![Stable build Status](https://travis-ci.org/xinax/laravel-gettext.png?branch=3.0.1)](https://travis-ci.org/xinax/laravel-gettext) <a href="https://github.com/xinax/laravel-gettext/tree/3.0.1">Latest Laravel 5.1+ stable release (3.0.1)</a>
-
-[![Stable build Status](https://travis-ci.org/xinax/laravel-gettext.png?branch=2.0.3)](https://travis-ci.org/xinax/laravel-gettext) <a href="https://github.com/xinax/laravel-gettext/tree/2.0.3">Latest Laravel 5.0 stable release (2.0.3)</a>
-
-[![Stable build Status](https://travis-ci.org/xinax/laravel-gettext.png?branch=1.0.3)](https://travis-ci.org/xinax/laravel-gettext) <a href="https://github.com/xinax/laravel-gettext/tree/1.0.3">Latest Laravel 4.x stable release (1.0.3)</a>
-
-[![Dev build Status](https://travis-ci.org/xinax/laravel-gettext.png?branch=master)](https://travis-ci.org/xinax/laravel-gettext) <a href="https://github.com/xinax/laravel-gettext/tree/master">Development master</a> Unstable, only for development (dev-master)
+Note that branch <b>1.x is for Laravel 4</b>, branch <b>2.x is for Laravel 5</b>
 
 ### 1. Requirements
 
@@ -26,17 +18,15 @@
 Add the composer repository to your *composer.json* file:
 
 ```json
-    "xinax/laravel-gettext": "3.x"
+    "compareasiagroup/laravel-gettext": "2.x" //Laravel 5
 ```
 
 And run composer update. Once it's installed, you can register the service provider in config/app.php in the providers array:
 
 ```php
-    'providers' = [
-        // ...
-        Xinax\LaravelGettext\LaravelGettextServiceProvider::class,
-        // ...
-    ]
+  'providers' => array(
+      'CompareAsiaGroup\LaravelGettext\LaravelGettextServiceProvider',
+  )
 ```
 
 Now you need to publish the configuration file in order to set your own application values:
@@ -45,23 +35,22 @@ Now you need to publish the configuration file in order to set your own applicat
     php artisan vendor:publish
 ```
 
-This command creates the package configuration file in: ```config/laravel-gettext.php```.
+This command creates the package configuration file in: *config/laravel-gettext.php*.
 
-You also need to register the LaravelGettext middleware in the ```app/Http/Kernel.php``` file:
+In Laravel 5 you also need to register the LaravelGettext middleware in the app/Http/Kernel.php file:
 
 ```php
     protected $middleware = [
-        // ...
-        \Xinax\LaravelGettext\Middleware\GettextMiddleware::class,
-        // ...
+        ...
+        'CompareAsiaGroup\LaravelGettext\Middleware\GettextMiddleware',
     ]
 ```
 
-> Be sure to add the line after ```Illuminate\Session\Middleware\StartSession```, otherwise the locale won't be saved into the session.
+Be sure to add the line after ```Illuminate\Session\Middleware\StartSession```, otherwise the locale won't be saved into the session.
 
 ### 3. Configuration
 
-At this time your application have full gettext support. Now you need to set some configuration values in ```laravel-gettext.php```.
+At this time your application have full gettext support. Now you need to set some configuration values in *laravel-gettext.php*.
 
 ```php
     /**
@@ -91,9 +80,7 @@ At this time your application have full gettext support. Now you need to set som
     'encoding' => 'UTF-8',
 ```
 
-Ok, now is configured. It's time to generate the directory structure and translation files for first time. 
-
-> Make sure you have wirte permissions on ```storage/``` before run this command
+Ok, now is configured. It's time to generate the directory structure and translation files for first time:
 
 ```bash
     php artisan gettext:create
@@ -118,8 +105,6 @@ By default *LaravelGettext* looks on app/Http/Controllers and resources/views re
     // an example view in blade
     {{ _('Translated string') }}
 ```
-
-> PoEdit doesn't "understand" blade syntax. When using blade views you must run ```php artisan gettext:update``` in order to compile all blade views to plain php before update the translations in PoEdit
 
 ##### B. Translate with PoEdit
 

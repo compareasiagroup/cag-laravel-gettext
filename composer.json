@@ -1,29 +1,26 @@
 {
-    "name": "xinax/laravel-gettext",
-    "description": "Adds localization support to laravel applications in an easy way using PoEdit and GNU-Gettext.",
-    "homepage": "https://github.com/xinax/laravel-gettext",
-    "keywords": ["gettext", "localization", "poedit", "laravel-gettext", "laravel", "translation"],
-    "license": "MIT",    
-    "authors": [
-        {
-            "name": "Nicolás Daniel Palumbo",
-            "email": "n@xinax.net"
-        }
-    ],
-    "support": {
-        "issues": "https://github.com/xinax/laravel-gettext/issues"
-    },    
-    "require": {
-        "php": ">=5.4.0",
-        "laravel/framework": "5.*"
-    },
-    "require-dev": {
-        "mockery/mockery": "dev-master"
-    },
-    "autoload": {
-        "psr-0": {
-            "Xinax\\LaravelGettext\\": "src/"
-        }
-    },
-    "minimum-stability": "stable"
+  "name": "compareasiagroup/cag-laravel-gettext",
+  "description": "Adds localization support to laravel applications in an easy way using PoEdit and GNU-Gettext.",
+  "homepage": "https://github.com/compareasiagroup/cag-laravel-gettext",
+  "keywords": ["gettext", "localization", "poedit", "laravel-gettext", "laravel", "translation"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nicolás Daniel Palumbo",
+      "email": "n@xinax.net"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "laravel/framework": "5.*"
+  },
+  "require-dev": {
+    "mockery/mockery": "dev-master"
+  },
+  "autoload": {
+    "psr-0": {
+      "CompareAsiaGroup\\LaravelGettext\\": "src/"
+    }
+  },
+  "minimum-stability": "stable"
 }

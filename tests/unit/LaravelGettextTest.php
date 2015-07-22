@@ -1,9 +1,9 @@
 <?php
 
-namespace Xinax\LaravelGettext\Test;
+namespace CompareAsiaGroup\LaravelGettext\Test;
 
 use \Mockery as m;
-use \Xinax\LaravelGettext\LaravelGettext;
+use \CompareAsiaGroup\LaravelGettext\LaravelGettext;
 
 
 class LaravelGettextTest extends BaseTestCase
@@ -20,7 +20,7 @@ class LaravelGettextTest extends BaseTestCase
     {
         parent::setUp();
 
-        $gettext = m::mock('Xinax\LaravelGettext\Gettext');
+        $gettext = m::mock('CompareAsiaGroup\LaravelGettext\Gettext');
 
         $gettext->shouldReceive('getEncoding')->andReturn('UTF-8');
         $gettext->shouldReceive('setEncoding')->with('UTF-8');
@@ -44,7 +44,7 @@ class LaravelGettextTest extends BaseTestCase
      */
     public function testLaravelGettextInstance()
     {
-        $this->assertInstanceOf('Xinax\LaravelGettext\LaravelGettext', $this->laravelGettext);
+        $this->assertInstanceOf('CompareAsiaGroup\LaravelGettext\LaravelGettext', $this->laravelGettext);
     }
 
     /**
