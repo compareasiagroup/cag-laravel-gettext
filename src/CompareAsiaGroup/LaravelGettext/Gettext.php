@@ -88,11 +88,11 @@ class Gettext
 
             // All locale functions are updated: LC_COLLATE, LC_CTYPE,
             // LC_MONETARY, LC_NUMERIC, LC_TIME and LC_MESSAGES
-            putenv("LC_ALL=$gettextLocale");
-            setlocale(LC_ALL, $gettextLocale);
+            //putenv("LC_ALL=$gettextLocale");
+            setlocale(LC_ALL,  "C." . $this->encoding);
 
             // Domain
-            $this->setDomain($this->domain);
+            $this->setDomain($this->domain, $locale);
 
             $this->locale = $locale;
             $this->session->set($locale);
@@ -178,13 +178,13 @@ class Gettext
      * @throws  UndefinedDomainException    If domain is not defined
      * @return  self
      */
-    public function setDomain($domain)
+    public function setDomain($domain, $locale)
     {
         if (!in_array($domain, $this->configuration->getAllDomains())) {
             throw new UndefinedDomainException("Domain '$domain' is not registered.");
         }
 
-        bindtextdomain($domain, $this->fileSystem->getDomainPath());
+        bindtextdomain($domain, $this->fileSystem->getDomainPath()."/".$locale);
         bind_textdomain_codeset($domain, $this->encoding);
 
         $this->domain = textdomain($domain);
