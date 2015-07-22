@@ -1,10 +1,10 @@
 <?php
 
-namespace Xinax\LaravelGettext\Test;
+namespace CompareAsiaGroup\LaravelGettext\Test;
 
 use \Mockery as m;
-use \Xinax\LaravelGettext\Gettext;
-use \Xinax\LaravelGettext\Config\ConfigManager;
+use \CompareAsiaGroup\LaravelGettext\Gettext;
+use \CompareAsiaGroup\LaravelGettext\Config\ConfigManager;
 
 class GettextTest extends BaseTestCase
 {
@@ -23,17 +23,17 @@ class GettextTest extends BaseTestCase
         $config = ConfigManager::create($testConfig);
 
 		// Session handler
-		$session = m::mock('Xinax\LaravelGettext\Session\SessionHandler');
+		$session = m::mock('CompareAsiaGroup\LaravelGettext\Session\SessionHandler');
 		$session->shouldReceive('get')->andReturn('en_US');
 		$session->shouldReceive('set')->with('en_US');
 
 		// Framework adapter
-		$adapter = m::mock('Xinax\LaravelGettext\Adapters\LaravelAdapter');
+		$adapter = m::mock('CompareAsiaGroup\LaravelGettext\Adapters\LaravelAdapter');
 		$adapter->shouldReceive('setLocale')->with('en_US');
 		$adapter->shouldReceive('getApplicationPath')->andReturn(dirname(__FILE__));
 
         // FileSystem module
-        $fileSystem = m::mock('Xinax\LaravelGettext\FileSystem');
+        $fileSystem = m::mock('CompareAsiaGroup\LaravelGettext\FileSystem');
         $fileSystem->shouldReceive('filesystemStructure')->andReturn(true);
         $fileSystem->shouldReceive('getDomainPath')->andReturn('path');
 
@@ -88,7 +88,7 @@ class GettextTest extends BaseTestCase
 	{
 		$response = $this->gettext->setEncoding('UTF-8');
 		$this->assertNotEmpty($response);
-		$this->assertInstanceOf('Xinax\LaravelGettext\Gettext', $response);
+		$this->assertInstanceOf('CompareAsiaGroup\LaravelGettext\Gettext', $response);
 	}
 
 	public function tearDown()

@@ -1,19 +1,19 @@
 <?php
 
-namespace Xinax\LaravelGettext\Test;
+namespace CompareAsiaGroup\LaravelGettext\Test;
 
 use \RecursiveIteratorIterator;
 use \RecursiveDirectoryIterator;
 use \Mockery as m;
-use \Xinax\LaravelGettext\LaravelGettext;
-use \Xinax\LaravelGettext\Gettext;
-use \Xinax\LaravelGettext\FileSystem;
-use \Xinax\LaravelGettext\Config\ConfigManager;
+use \CompareAsiaGroup\LaravelGettext\LaravelGettext;
+use \CompareAsiaGroup\LaravelGettext\Gettext;
+use \CompareAsiaGroup\LaravelGettext\FileSystem;
+use \CompareAsiaGroup\LaravelGettext\Config\ConfigManager;
 use Xinax\LaravelGettext\Exceptions\UndefinedDomainException;
 
 /**
  * Class MultipleDomainTest
- * @package Xinax\LaravelGettext\Test
+ * @package CompareAsiaGroup\LaravelGettext\Test
  */
 class MultipleDomainTest extends BaseTestCase
 {
@@ -166,12 +166,12 @@ class MultipleDomainTest extends BaseTestCase
     public function testTranslations()
     {
         // Session handler
-        $session = m::mock('Xinax\LaravelGettext\Session\SessionHandler');
+        $session = m::mock('CompareAsiaGroup\LaravelGettext\Session\SessionHandler');
         $session->shouldReceive('get')->andReturn('es_AR');
         $session->shouldReceive('set');
 
         // Framework adapter
-        $adapter = m::mock('Xinax\LaravelGettext\Adapters\LaravelAdapter');
+        $adapter = m::mock('CompareAsiaGroup\LaravelGettext\Adapters\LaravelAdapter');
         $adapter->shouldReceive('setLocale');
         $adapter->shouldReceive('getApplicationPath')->andReturn(dirname(__FILE__));
 
