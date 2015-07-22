@@ -2,7 +2,7 @@
 
 namespace CompareAsiaGroup\LaravelGettext\Commands;
 
-use Xinax\LaravelGettext\Exceptions\DirectoryNotFoundException;
+use CompareAsiaGroup\LaravelGettext\Exceptions\DirectoryNotFoundException;
 use Symfony\Component\Console\Input\InputOption;
 
 class GettextUpdate extends BaseCommand

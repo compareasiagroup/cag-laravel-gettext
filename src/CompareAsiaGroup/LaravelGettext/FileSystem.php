@@ -1,9 +1,9 @@
 <?php namespace CompareAsiaGroup\LaravelGettext;
 
-use Xinax\LaravelGettext\Config\Models\Config;
-use Xinax\LaravelGettext\Exceptions\LocaleFileNotFoundException;
-use Xinax\LaravelGettext\Exceptions\DirectoryNotFoundException;
-use Xinax\LaravelGettext\Exceptions\FileCreationException;
+use CompareAsiaGroup\LaravelGettext\Config\Models\Config;
+use CompareAsiaGroup\LaravelGettext\Exceptions\LocaleFileNotFoundException;
+use CompareAsiaGroup\LaravelGettext\Exceptions\DirectoryNotFoundException;
+use CompareAsiaGroup\LaravelGettext\Exceptions\FileCreationException;
 
 class FileSystem {
 

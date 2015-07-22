@@ -9,7 +9,7 @@ use \CompareAsiaGroup\LaravelGettext\LaravelGettext;
 use \CompareAsiaGroup\LaravelGettext\Gettext;
 use \CompareAsiaGroup\LaravelGettext\FileSystem;
 use \CompareAsiaGroup\LaravelGettext\Config\ConfigManager;
-use Xinax\LaravelGettext\Exceptions\UndefinedDomainException;
+use CompareAsiaGroup\LaravelGettext\Exceptions\UndefinedDomainException;
 
 /**
  * Class MultipleDomainTest
@@ -161,7 +161,7 @@ class MultipleDomainTest extends BaseTestCase
     }
 
     /**
-     * @expectedException Xinax\LaravelGettext\Exceptions\UndefinedDomainException
+     * @expectedException CompareAsiaGroup\LaravelGettext\Exceptions\UndefinedDomainException
      */
     public function testTranslations()
     {

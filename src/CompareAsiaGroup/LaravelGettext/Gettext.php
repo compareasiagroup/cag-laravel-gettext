@@ -2,10 +2,10 @@
 
 namespace CompareAsiaGroup\LaravelGettext;
 
-use Xinax\LaravelGettext\Session\SessionHandler;
-use Xinax\LaravelGettext\Adapters\AdapterInterface;
-use Xinax\LaravelGettext\Config\Models\Config;
-use Xinax\LaravelGettext\Exceptions\UndefinedDomainException;
+use CompareAsiaGroup\LaravelGettext\Session\SessionHandler;
+use CompareAsiaGroup\LaravelGettext\Adapters\AdapterInterface;
+use CompareAsiaGroup\LaravelGettext\Config\Models\Config;
+use CompareAsiaGroup\LaravelGettext\Exceptions\UndefinedDomainException;
 
 use \Session;
 
@@ -13,7 +13,7 @@ class Gettext
 {
     /**
      * Config container
-     * @type Xinax\LaravelGettext\Config\Models\Config
+     * @type CompareAsiaGroup\LaravelGettext\Config\Models\Config
      */
     protected $configuration;
 
@@ -31,7 +31,7 @@ class Gettext
 
     /**
      * Framework adapter
-     * @type Xinax\Adapters\LaravelAdapter
+     * @type CompareAsiaGroup\Adapters\LaravelAdapter
      */
     protected $adapter;
 
