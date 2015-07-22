@@ -1,8 +1,8 @@
 <?php namespace CompareAsiaGroup\LaravelGettext\Commands;
 
 use Illuminate\Console\Command;
-use Xinax\LaravelGettext\FileSystem;
-use Xinax\LaravelGettext\Config\ConfigManager;
+use CompareAsiaGroup\LaravelGettext\FileSystem;
+use CompareAsiaGroup\LaravelGettext\Config\ConfigManager;
 
 class BaseCommand extends Command
 {

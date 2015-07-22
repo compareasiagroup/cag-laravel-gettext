@@ -2,7 +2,7 @@
 
 namespace CompareAsiaGroup\LaravelGettext;
 
-use Xinax\LaravelGettext\Composers\LanguageSelector;
+use CompareAsiaGroup\LaravelGettext\Composers\LanguageSelector;
 
 class LaravelGettext
 {

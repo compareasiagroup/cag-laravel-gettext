@@ -10,7 +10,7 @@ class GettextTest extends BaseTestCase
 {
 	/**
 	 * Gettext wrapper
-	 * @var Xinax\LaravelGettext\Gettext
+	 * @var CompareAsiaGroup\LaravelGettext\Gettext
 	 */
 	protected $gettext;
 

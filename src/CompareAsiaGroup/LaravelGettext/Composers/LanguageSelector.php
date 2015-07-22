@@ -1,6 +1,6 @@
 <?php namespace CompareAsiaGroup\LaravelGettext\Composers;
 
-use Xinax\LaravelGettext\LaravelGettext;
+use CompareAsiaGroup\LaravelGettext\LaravelGettext;
 use \Config;
 
 /**
