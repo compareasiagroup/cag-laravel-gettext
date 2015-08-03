@@ -184,6 +184,7 @@ class Gettext
             throw new UndefinedDomainException("Domain '$domain' is not registered.");
         }
 
+        bindtextdomain($domain, $this->fileSystem->getDomainPath()."/");
         bindtextdomain($domain, $this->fileSystem->getDomainPath()."/".$locale);
         bind_textdomain_codeset($domain, $this->encoding);
 
