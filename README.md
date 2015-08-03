@@ -99,6 +99,9 @@ By default *LaravelGettext* looks on app/Http/Controllers and resources/views re
     echo 'Non translated string';
     echo _('Translated string');
     echo _('Another translated string');
+    // with parameter
+    $str = 'parameter';
+    echo sprintf(_('Translated string with %s'), $str);
 ```
 
 ```php
