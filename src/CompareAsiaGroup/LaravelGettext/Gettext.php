@@ -88,7 +88,7 @@ class Gettext
 
             // All locale functions are updated: LC_COLLATE, LC_CTYPE,
             // LC_MONETARY, LC_NUMERIC, LC_TIME and LC_MESSAGES
-            //putenv("LC_ALL=$gettextLocale");
+            putenv("LC_ALL=C.".$this->encoding);
             setlocale(LC_ALL,  "C." . $this->encoding);
 
             // Domain
